@@ -1,3 +1,17 @@
+// import mongoose from "mongoose";
+
+// const DBconnect = async () => {
+//     try {
+//         let res = await mongoose.connect(process.env.MONGODB_URI)
+//         console.log("👍_MongoDB Conected : ", res.connection.host);
+//     } catch (err) {
+//         console.log("🚨_MongoDB Connection Error : ", err.message);
+//         process.exit(1)
+//     }
+// }
+
+// export default DBconnect
+
 import mongoose from "mongoose";
 
 const DBconnect = async () => {

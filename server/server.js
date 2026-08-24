@@ -1,21 +1,16 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import dns from 'dns'
-import app from './app.js'
-import DBconnect from './config/db.js'
+import dotenv from "dotenv";
+dotenv.config({ path: "./.env" });
 
-const server = dns.setServers(['8.8.8.8', '8.4.8.4'])
+import dns from "dns";
+import app from "./app.js";
+import DBconnect from "./src/config/db.js";
 
-dotenv.config({
-    path: "./.env"
-})
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
-const app = express()
+DBconnect();
 
-DBconnect()
-
-const port = process.env.PORT
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-    console.log(`Server Start : http://localhost:${port}`);
-})
+  console.log(`Server Start : http://localhost:${port}`);
+});
